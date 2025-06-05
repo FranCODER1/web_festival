@@ -1,0 +1,626 @@
+/* estilos.css */
+
+/* ==========================================================================
+   0. VARIABLES DE COLOR (BASADAS EN EL LOGO)
+   ========================================================================== */
+:root {
+    --color-primary-red: #D7252D;
+    --color-secondary-blue: #1D325B;
+    --color-accent-light-blue: #4A90E2;
+    --color-text-dark: #282c34;
+    --color-text-light: #FFFFFF;
+    --color-background-main: #FFFFFF;
+    --color-background-section: #F0F4F8;
+    --color-border: #A0B0C5;
+    --color-hover-red: #B31E25;
+    --color-hover-blue: #132342;
+}
+
+/* ==========================================================================
+   1. ESTILOS GLOBALES Y RESET
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--color-background-main);
+    color: var(--color-text-dark);
+}
+
+/* ==========================================================================
+   2. TIPOGRAFÍA Y ELEMENTOS BÁSICOS
+   ========================================================================== */
+h1, h2, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-primary-red);
+    margin-bottom: 0.75em;
+    line-height: 1.2;
+}
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-secondary-blue);
+    margin-bottom: 0.75em;
+    line-height: 1.2;
+}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+p { margin-bottom: 1rem; }
+
+a {
+    color: var(--color-primary-red);
+    text-decoration: none;
+}
+a:hover, a:focus {
+    text-decoration: underline;
+    color: var(--color-hover-red);
+    transform: translateY(-2px);
+}
+
+ul, ol {
+    margin-left: 20px;
+    margin-bottom: 1rem;
+}
+nav ul, footer ul { /* Quitar viñetas de listas de navegación */
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+img { /* Responsividad básica para imágenes */
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+audio { /* Estilo base para audio */
+    width: 100%;
+    margin-top: 1em;
+    max-width: 100%; /* Asegurar responsividad del control de audio */
+}
+
+a[target="_blank"]::after { /* Iconos Font Awesome al lado de enlaces externos */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f35d";
+    margin-left: 0.3em;
+    font-size: 0.8em;
+    display: inline-block;
+    transition: transform 0.2s ease-out;
+}
+a[target="_blank"]:hover::after {
+    transform: scale(1.1) translateX(1px);
+}
+
+/* ==========================================================================
+3. ESTRUCTURA Y LAYOUT (HEADER, NAV, MAIN, FOOTER)
+   ========================================================================== */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* --- HEADER --- */
+header {
+    background-color: var(--color-background-main);
+    padding-top: 1rem;
+}
+header .container { 
+    overflow: auto;
+    padding-bottom: 1rem; 
+}
+header img#logo { 
+    float: left;
+    width: 100px; 
+    height: auto;
+    margin-right: 20px;
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+header img#logo:hover {
+    transform: rotate(10deg) scale(1.1);
+}
+header h1 {
+    text-align: left;
+    color: var(--color-primary-red);
+    padding-top: 20px; 
+    margin-bottom: 0;
+    line-height: 1.2; 
+}
+
+/* --- NAVEGACIÓN (STICKY ANIMADO) --- */
+nav#main-nav {
+    background-color: var(--color-secondary-blue);
+    padding: 0.5rem 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border-top: 3px solid var(--color-secondary-blue); /* Línea azul encima del nav */
+}
+nav#main-nav ul {
+    text-align: center;
+}
+nav#main-nav ul li {
+    display: inline-block;
+    margin: 0 0.8rem;
+}
+nav#main-nav ul li a {
+    color: var(--color-text-light);
+    padding: 0.8em 1.2em;
+    display: block;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    position: relative;
+}
+nav#main-nav ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary-red);
+    transition: all 0.3s ease-out;
+    transform: translateX(-50%);
+}
+nav#main-nav ul li a:hover,
+nav#main-nav ul li a:focus,
+nav#main-nav ul li a.active {
+    background-color: var(--color-primary-red);
+    color: var(--color-text-light);
+    text-decoration: none;
+    transform: scale(1.05);
+}
+nav#main-nav ul li a:hover::before,
+nav#main-nav ul li a:focus::before,
+nav#main-nav ul li a.active::before {
+    width: 80%;
+}
+
+/* --- MAIN CONTENT --- */
+main {
+    padding: 2rem 0;
+}
+section {
+    padding: 1.5rem 15px;
+    margin-bottom: 2rem;
+    background-color: var(--color-background-section);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.05);
+}
+
+h2 + p {
+    font-style: italic;
+    color: #555;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--color-secondary-blue);
+    color: var(--color-text-light);
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 5px solid var(--color-primary-red);
+}
+footer p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+footer a {
+    color: var(--color-accent-light-blue);
+}
+footer a:hover {
+    color: var(--color-primary-red);
+}
+
+/* ==========================================================================
+4. ESTILOS DE COMPONENTES ESPECÍFICOS
+   ========================================================================== */
+
+/* --- ARTIST CARDS (artistas.html) --- */
+.artist-card {
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1.5em;
+    margin-bottom: 2em;
+    overflow: auto;
+    background-color: var(--color-background-main);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.artist-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+.artist-card figure {
+    float: left;
+    width: 180px;
+    margin-right: 1.5em;
+    margin-bottom: 1em;
+}
+.artist-card figure img {
+    border-radius: 8px;
+    border: 3px solid var(--color-accent-light-blue);
+    width: 100%;
+}
+.artist-card .artist-info {
+    overflow: hidden;
+}
+
+/* --- TABLAS (Cronograma, Entradas) --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    background-color: var(--color-background-main);
+}
+table caption {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: var(--color-text-dark);
+    padding: 0.5em 0;
+    text-align: left; /* Alinear caption a la izquierda por defecto */
+}
+table th, table td {
+    border: 1px solid var(--color-border);
+    padding: 0.75em;
+    text-align: left;
+    vertical-align: top;
+}
+table th {
+    background-color: var(--color-secondary-blue);
+    color: var(--color-text-light);
+    font-weight: bold;
+}
+table tbody tr:nth-child(even) {
+    background-color: var(--color-background-section);
+}
+table tbody tr:hover {
+    background-color: #d6eaf8;
+}
+table tfoot td {
+    font-style: italic;
+    background-color: #e0e6ec;
+    color: var(--color-text-dark);
+}
+
+/* --- FORMULARIO (contacto.html) --- */
+#formulario-contacto form div,
+#formulario-contacto form fieldset {
+    margin-bottom: 1.5rem;
+}
+#formulario-contacto label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: 500;
+    color: var(--color-text-dark);
+}
+#formulario-contacto input[type="text"],
+#formulario-contacto input[type="email"],
+#formulario-contacto textarea,
+#formulario-contacto select {
+    width: 100%;
+    padding: 0.8em;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    background-color: var(--color-background-main);
+    color: var(--color-text-dark);
+}
+#formulario-contacto input[type="text"]:focus,
+#formulario-contacto input[type="email"]:focus,
+#formulario-contacto textarea:focus,
+#formulario-contacto select:focus {
+    outline: none;
+    border-color: var(--color-primary-red);
+    box-shadow: 0 0 5px rgba(215, 37, 45, 0.4);
+}
+#formulario-contacto textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+#formulario-contacto fieldset {
+    border: 1px solid var(--color-border);
+    padding: 1em;
+    border-radius: 4px;
+}
+#formulario-contacto legend {
+    padding: 0 0.5em;
+    font-weight: bold;
+    color: var(--color-secondary-blue);
+}
+#formulario-contacto input[type="radio"],
+#formulario-contacto input[type="checkbox"] {
+    margin-right: 0.5em;
+    transform: scale(1.1);
+    accent-color: var(--color-primary-red);
+}
+
+/* Botones del Formulario y Genéricos */
+.btn,
+#formulario-contacto input[type="submit"] {
+    background-color: var(--color-primary-red);
+    color: var(--color-text-light);
+    padding: 0.8em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-right: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-decoration: none;
+}
+#formulario-contacto input[type="reset"] {
+    background-color: var(--color-border);
+    color: var(--color-text-dark);
+    padding: 0.8em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-right: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.btn:hover, .btn:focus,
+#formulario-contacto input[type="submit"]:hover,
+#formulario-contacto input[type="submit"]:focus {
+    background-color: var(--color-hover-red);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transform: translateY(-1px);
+    text-decoration: none;
+}
+#formulario-contacto input[type="reset"]:hover,
+#formulario-contacto input[type="reset"]:focus {
+    background-color: #8897a8;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transform: translateY(-1px);
+}
+
+/* --- VIDEO RESPONSIVE WRAPPER --- */
+.video-responsive-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    margin: 1rem auto;
+    border: 2px solid var(--color-secondary-blue);
+    border-radius: 4px;
+    background-color: #000; /* Fondo negro mientras carga el video/mapa */
+}
+.video-responsive-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* --- POSICIONAMIENTO EXTRA (EJEMPLO FIJO) --- */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-primary-red);
+    color: var(--color-text-light);
+    padding: 10px 15px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: block;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+.back-to-top:hover {
+    background-color: var(--color-hover-red);
+    transform: scale(1.1);
+    text-decoration: none;
+}
+
+/* ==========================================================================
+5. DISEÑO RESPONSIVO (MEDIA QUERIES)
+   ========================================================================== */
+
+/* --- ESCRITORIO (Desde 901px) --- (Estilos base ya orientados a escritorio) */
+/* No se necesitan cambios específicos aquí si los estilos base ya están correctos para escritorio */
+
+/* --- TABLETS (601px a 900px) --- */
+@media (min-width: 601px) and (max-width: 900px) {
+    html { font-size: 15px; }
+    .container { width: 90%; }
+
+    header .container {
+        padding-bottom: 0.75rem;
+    }
+    header img#logo {
+        float: left;
+        width: 80px;
+        margin-right: 15px;
+    }
+    header h1 {
+        text-align: left;
+        font-size: 2rem;
+        padding-top: 5px; /* Ajustar para tablet */
+    }
+
+    nav#main-nav ul li { margin: 0 0.5rem; }
+    nav#main-nav ul li a { font-size: 0.85rem; padding: 0.7em 1em; }
+
+    .artist-card figure {
+        width: 160px;
+    }
+}
+
+/* --- DISPOSITIVOS MÓVILES (hasta 600px) --- */
+@media (max-width: 600px) {
+    html { font-size: 14px; }
+    .container { width: 95%; padding-left: 10px; padding-right: 10px; }
+
+    header {
+        padding-top: 0.5rem;
+    }
+    header .container {
+        overflow: visible;
+        padding-bottom: 0.5rem;
+    }
+    header img#logo {
+        float: none;
+        display: block;
+        width: 80px;
+        margin: 0 auto 0.5rem;
+    }
+    header h1 {
+        text-align: center;
+        font-size: 1.8rem;
+        padding-top: 0;
+        float: none;
+    }
+
+    nav#main-nav {
+        border-top-width: 2px;
+    }
+    nav#main-nav ul li {
+        display: block;
+        margin: 0;
+    }
+    nav#main-nav ul li a {
+        padding: 0.8em;
+        border-bottom: 1px solid var(--color-hover-blue);
+        border-radius: 0;
+    }
+    nav#main-nav ul li:last-child a {
+        border-bottom: none;
+    }
+    nav#main-nav ul li a::before {
+        display: none;
+    }
+
+    .artist-card figure {
+        float: none;
+        width: 150px;
+        margin: 0 auto 1em;
+    }
+    .artist-card .artist-info {
+        text-align: center;
+    }
+
+    /* === ESTILOS DE TABLA RESPONSIVA (MÓVIL) - CORREGIDO === */
+    table {
+        display: block;
+        width: 100%;
+    }
+    table caption {
+        display: block;
+        text-align: center;
+        margin-bottom: 1em;
+        font-size: 1.1em;
+        font-weight: bold;
+        color: var(--color-text-dark);
+    }
+    table thead {
+        display: none;
+    }
+    table tbody, table tr, table td, table th { /* Incluir th por si se usa en tbody */
+        display: block;
+        width: 100%;
+    }
+    table tr {
+        border: 1px solid var(--color-border);
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        background-color: var(--color-background-main);
+    }
+    table td {
+        border: none;
+        border-bottom: 1px dashed var(--color-border);
+        position: relative;
+        padding: 0.6em 0.5em 0.6em 40%; /* Espacio para la etiqueta */
+        text-align: right;
+        min-height: auto; /* Quitar min-height anterior */
+    }
+    table td:last-child {
+        border-bottom: none;
+    }
+    table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0.5em;
+        top: 0.6em; /* Alinear con padding-top del td */
+        width: 35%; /* Ancho para la etiqueta */
+        padding-right: 0.5em; /* Espacio entre etiqueta y valor */
+        white-space: normal; /* Permitir que etiquetas largas se dividan */
+        font-weight: bold;
+        text-align: left;
+        color: var(--color-secondary-blue);
+    }
+    /* Ajustes específicos para la celda del botón de compra */
+    table td[data-label="Enlace de Compra"] {
+        padding: 0.8em 0.5em;
+        text-align: center;
+    }
+    table td[data-label="Enlace de Compra"]::before {
+        display: none; /* Ocultar etiqueta si el botón es obvio */
+    }
+    table td[data-label="Enlace de Compra"] .btn {
+        display: inline-block;
+        width: auto;
+        padding: 0.6em 1em;
+        font-size: 0.85rem;
+    }
+    /* Ajustes para la celda de descripción */
+    table td[data-label="Descripción"] {
+        text-align: left;
+        padding-left: 0.5em; 
+        padding-top: 0.6em; 
+    }
+    table td[data-label="Descripción"]::before {
+    
+        width: auto; 
+        position: relative; 
+        display: block; 
+        margin-bottom: 0.2em; 
+        top: auto; left: auto; 
+        padding-right: 0; 
+    }
+
+
+    .back-to-top {
+        padding: 8px 12px;
+        font-size: 1rem;
+        bottom: 15px;
+        right: 15px;
+    }
+}

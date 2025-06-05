@@ -5,27 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Información sobre entradas y abonos para Sonidos de la Ciudad.">
     <title>Entradas - Sonidos de la Ciudad</title>
-    <link rel="icon" href="/img/logo_ciudad.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="icon" href="img/logo_ciudad.ico"> 
 </head>
 <body>
     <header>
+    <div class="container"> 
         <a href="index.html">
-            <img src="/img/logo_ciudad.png" alt="Logo Sonidos de la Ciudad" width="150">
+            <img src="img/logo_ciudad.png" alt="Logo Sonidos de la Ciudad" width="150" id="logo"> 
         </a>
         <h1>Compra tus Entradas</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="artistas.html">Artistas</a></li>
-                <li><a href="cronograma.html">Cronograma</a></li>
-                <li><a href="entradas.html">Entradas</a></li>
-                <li><a href="ubicacion.html">Ubicación</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+    </div> 
+    <nav id="main-nav"> 
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="artistas.html">Artistas</a></li>
+            <li><a href="cronograma.html">Cronograma</a></li>
+            <li><a href="entradas.html" class="active">Entradas</a></li> 
+            <li><a href="ubicacion.html">Ubicación</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <main>
+    <main class="container"> 
         <section id="tipos-entradas">
             <h2>Tipos de Entradas y Precios</h2>
             <table border="1" cellpadding="8" cellspacing="4"> 
@@ -41,32 +46,32 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Entrada General Diaria</td>
-                        <td>Acceso a todos los escenarios por un día.</td>
-                        <td>$2500 ARS</td>
-                        <td>$3000 ARS</td>
-                        <td><a href="https://www.example-ticketera.com/sonidos-diaria" target="_blank" rel="noopener noreferrer">Comprar Ahora</a></td>
+                        <td data-label="Tipo de Entrada">Entrada General Diaria</td>
+                        <td data-label="Descripción">Acceso a todos los escenarios por un día.</td>
+                        <td data-label="Precio (Preventa)">$2500 ARS</td>
+                        <td data-label="Precio (Puerta)">$3000 ARS</td>
+                        <td data-label="Enlace de Compra"><a href="https://www.example-ticketera.com/sonidos-diaria" target="_blank" rel="noopener noreferrer" class="btn">Comprar Ahora</a></td>
                     </tr>
                     <tr>
-                        <td>Abono General (3 días)</td>
-                        <td>Acceso completo a los tres días del festival.</td>
-                        <td>$6000 ARS</td>
-                        <td>$7500 ARS</td>
-                        <td><a href="https://www.example-ticketera.com/sonidos-abono" target="_blank" rel="noopener noreferrer">Comprar Abono</a></td>
+                        <td data-label="Tipo de Entrada">Abono General (3 días)</td>
+                        <td data-label="Descripción">Acceso completo a los tres días del festival.</td>
+                        <td data-label="Precio (Preventa)">$6000 ARS</td>
+                        <td data-label="Precio (Puerta)">$7500 ARS</td>
+                        <td data-label="Enlace de Compra"><a href="https://www.example-ticketera.com/sonidos-abono" target="_blank" rel="noopener noreferrer" class="btn">Comprar Abono</a></td>
                     </tr>
                     <tr>
-                        <td>Entrada VIP Diaria</td>
-                        <td>Acceso preferencial, área VIP, consumiciones.</td>
-                        <td>$5000 ARS</td>
-                        <td>$6000 ARS</td>
-                        <td><a href="https://www.example-ticketera.com/sonidos-vip-diaria" target="_blank" rel="noopener noreferrer">Comprar VIP</a></td>
+                        <td data-label="Tipo de Entrada">Entrada VIP Diaria</td>
+                        <td data-label="Descripción">Acceso preferencial, área VIP, consumiciones.</td>
+                        <td data-label="Precio (Preventa)">$5000 ARS</td>
+                        <td data-label="Precio (Puerta)">$6000 ARS</td>
+                        <td data-label="Enlace de Compra"><a href="https://www.example-ticketera.com/sonidos-vip-diaria" target="_blank" rel="noopener noreferrer" class="btn">Comprar VIP</a></td>
                     </tr>
                     <tr>
-                        <td>Abono VIP (3 días)</td>
-                        <td>Experiencia VIP completa para todo el festival.</td>
-                        <td>$12000 ARS</td>
-                        <td>$15000 ARS</td>
-                        <td><a href="https://www.example-ticketera.com/sonidos-vip-abono" target="_blank" rel="noopener noreferrer">Comprar Abono VIP</a></td>
+                        <td data-label="Tipo de Entrada">Abono VIP (3 días)</td>
+                        <td data-label="Descripción">Experiencia VIP completa para todo el festival.</td>
+                        <td data-label="Precio (Preventa)">$12000 ARS</td>
+                        <td data-label="Precio (Puerta)">$15000 ARS</td>
+                        <td data-label="Enlace de Compra"><a href="https://www.example-ticketera.com/sonidos-vip-abono" target="_blank" rel="noopener noreferrer" class="btn">Comprar Abono VIP</a></td>
                     </tr>
                 </tbody>
                 <tfoot>
@@ -87,7 +92,10 @@
 
     <footer>
         <p>© 2024 Sonidos de la Ciudad. Todos los derechos reservados.</p>
-        <p>Síguenos en <a href="https://www.facebook.com/franco.rivero.7967/" target="_blank" rel="noopener noreferrer">Facebook</a> | <a href="https://www.instagram.com/p/DJhlXBevOy0/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+        <p>Síguenos en 
+            <a href="https://www.facebook.com/franco.rivero.7967/" target="_blank" rel="noopener noreferrer">Facebook</a> | 
+            <a href="https://www.instagram.com/p/DJhlXBevOy0/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </p>
         <p><a href="mailto:info@sonidosdelaciudad.com">info@sonidosdelaciudad.com</a></p>
     </footer>
 </body>

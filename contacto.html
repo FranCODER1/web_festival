@@ -5,28 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contacta con la organización del festival Sonidos de la Ciudad.">
     <title>Contacto - Sonidos de la Ciudad</title>
-    <link rel="icon" href="/img/logo_ciudad.ico">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="icon" href="img/logo_ciudad.ico"> 
 </head>
 <body>
     <header>
+    <div class="container">
         <a href="index.html">
-            <img src="/img/logo_ciudad.png" alt="Logo Sonidos de la Ciudad" width="150">
+            <img src="img/logo_ciudad.png" alt="Logo Sonidos de la Ciudad" width="150" id="logo">
         </a>
         <h1>Contacto</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="artistas.html">Artistas</a></li>
-                <li><a href="cronograma.html">Cronograma</a></li>
-                <li><a href="entradas.html">Entradas</a></li>
-                <li><a href="ubicacion.html">Ubicación</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+    </div> 
+    <nav id="main-nav">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="artistas.html">Artistas</a></li>
+            <li><a href="cronograma.html">Cronograma</a></li>
+            <li><a href="entradas.html">Entradas</a></li>
+            <li><a href="ubicacion.html">Ubicación</a></li>
+            <li><a href="contacto.html" class="active">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <main>
+    <main class="container">
         <section id="info-contacto">
             <h2>Ponete en Contacto</h2>
             <p>Si tienes preguntas, sugerencias o quieres colaborar con el festival, no dudes en escribirnos.</p>
@@ -79,11 +83,7 @@
                     <label for="contact_telefono">Teléfono (si lo proporcionaste)</label>
                 </fieldset>
                 <div>
-                    <input type="checkbox" id="newsletter" name="newsletter" value="suscribir">
-                    <label for="newsletter">Quiero suscribirme al newsletter para recibir novedades.</label>
-                </div>
-                <div>
-                    <input type="submit" va     lue="Enviar Mensaje">
+                    <input type="submit" value="Enviar Mensaje">
                     <input type="reset" value="Limpiar Formulario">
                 </div>
             </form>

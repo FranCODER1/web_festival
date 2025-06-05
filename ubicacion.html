@@ -5,27 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cómo llegar al festival Sonidos de la Ciudad y mapa de ubicación.">
     <title>Ubicación - Sonidos de la Ciudad</title>
-    <link rel="icon" href="/img/logo_ciudad.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="icon" href="img/logo_ciudad.ico">
 </head>
 <body>
     <header>
-        <a href="index.html">
-            <img src="/img/logo_ciudad.png" alt="Logo Sonidos de la Ciudad" width="150">
-        </a>
-        <h1>Ubicación del Evento</h1>
-        <nav>
+        <div class="container">
+            <a href="index.html">
+                <img src="img/logo_ciudad.png" alt="Logo Sonidos de la Ciudad" width="150" id="logo">
+            </a>
+            <h1>Ubicación del Evento</h1>
+        </div> 
+        <nav id="main-nav"> 
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="artistas.html">Artistas</a></li>
                 <li><a href="cronograma.html">Cronograma</a></li>
                 <li><a href="entradas.html">Entradas</a></li>
-                <li><a href="ubicacion.html">Ubicación</a></li>
+                <li><a href="ubicacion.html" class="active">Ubicación</a></li> 
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main class="container">
         <section id="direccion">
             <h2>Dirección y Cómo Llegar</h2>
             <p>El festival "Sonidos de la Ciudad" se llevará a cabo en:</p>
@@ -38,37 +43,41 @@
 
             <h3>Transporte Público:</h3>
             <ul>
-                <li>Colectivo: Líneas 17, 21, (parada "La banda")</li>
-                <li>Colectivo:Linea 120 (caminar 3 cuadras desde forum)</li>
+                <li>Colectivo: Líneas 17, 21 (parada "La banda")</li> 
+                <li>Colectivo: Línea 120 (caminar 3 cuadras desde Forum)</li>
             </ul>
             <h3>En Auto:</h3>
             <p>Habrá estacionamiento limitado en las cercanías. Se recomienda el uso de transporte público.</p>
         </section>
 
-     <section id="mapa">
-    <h2>Mapa Interactivo - Ubicación del Festival</h2>
-    <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3550.482744448968!2d-64.26292682383606!3d-27.797135676193816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943b521857f5906d%3A0xbef5acd1ba9808d9!2sRivadavia%201049%2C%20G4200%20Santiago%20del%20Estero!5e0!3m2!1ses!2sar!4v1715887214196!5m2!1ses!2sar" 
-        width="600" 
-        height="450" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Mapa de ubicación: Rivadavia 1049, Santiago del Estero">
-    </iframe>
-</section>
+        <section id="mapa">
+            <h2>Mapa Interactivo - Ubicación del Festival</h2>
+            <div class="video-responsive-wrapper"> 
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3550.482744448968!2d-64.26292682383606!3d-27.797135676193816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943b521857f5906d%3A0xbef5acd1ba9808d9!2sRivadavia%201049%2C%20G4200%20Santiago%20del%20Estero!5e0!3m2!1ses!2sar!4v1715887214196!5m2!1ses!2sar" 
+                    width="600" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Mapa de ubicación: Rivadavia 1049, Santiago del Estero">
+                </iframe>
+            </div> 
+        </section>
 
         <section id="puntos-venta">
             <h2>Puntos de Venta Físicos de Entradas</h2>
             <p>Próximamente anunciaremos los puntos de venta autorizados.</p>
         </section>
-
     </main>
 
     <footer>
         <p>© 2024 Sonidos de la Ciudad. Todos los derechos reservados.</p>
-        <p>Síguenos en <a href="https://www.facebook.com/franco.rivero.7967/" target="_blank" rel="noopener noreferrer">Facebook</a> | <a href="https://www.instagram.com/p/DJhlXBevOy0/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+        <p>Síguenos en 
+            <a href="https://www.facebook.com/franco.rivero.7967/" target="_blank" rel="noopener noreferrer">Facebook</a> | 
+            <a href="https://www.instagram.com/p/DJhlXBevOy0/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </p>
         <p><a href="mailto:info@sonidosdelaciudad.com">info@sonidosdelaciudad.com</a></p>
     </footer>
 </body>

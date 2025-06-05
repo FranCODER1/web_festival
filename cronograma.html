@@ -4,30 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Horarios y escenarios del festival Sonidos de la Ciudad.">
-    <link rel="icon" href="/img/logo_ciudad.ico">
     <title>Cronograma - Sonidos de la Ciudad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="icon" href="img/logo_ciudad.ico"> 
 </head>
 <body>
     
-    <header>
+<header>
+    <div class="container">
         <a href="index.html">
-            <img src="/img/logo_ciudad.png" alt="Logo Sonidos de la Ciudad" width="150">
+            <img src="img/logo_ciudad.png" alt="Logo Sonidos de la Ciudad" width="150" id="logo"> 
         </a>
         <h1>Cronograma del Festival</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="artistas.html">Artistas</a></li>
-                <li><a href="cronograma.html">Cronograma</a></li>
-                <li><a href="entradas.html">Entradas</a></li>
-                <li><a href="ubicacion.html">Ubicación</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+    </div> 
+    <nav id="main-nav"> 
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="artistas.html">Artistas</a></li>
+            <li><a href="cronograma.html" class="active">Cronograma</a></li> 
+            <li><a href="entradas.html">Entradas</a></li>
+            <li><a href="ubicacion.html">Ubicación</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <main>
-               <section id="horarios-lista">
+    <main class="container">
+            <section id="horarios-lista">
             <h2>Horarios por Día (Lista Ordenada) - Especial Folklore Santiagueño</h2>
             <nav id="navegacion-dias">
                 <p>Ir a: <a href="#viernes">Viernes 15</a> | <a href="#sabado">Sábado 16</a> | <a href="#domingo">Domingo 17</a></p>
@@ -76,21 +81,21 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Principal</strong></td>
-                        <td><strong>Horacio Banegas (20:30)</strong><br><strong>Raly Barrionuevo (22:30)</strong></td>
-                        <td><strong>Dúo Coplanacu (20:30)</strong><br><strong>Los Manseros Santiagueños (22:30)</strong></td>
-                        <td><strong>Peteco Carabajal (19:30)</strong><br>Cierre Santiagueño (21:30)</td>
+                        <td data-label="Escenario"><strong>Principal</strong></td>
+                        <td data-label="Viernes 15"><strong>Horacio Banegas (20:30)</strong><br><strong>Raly Barrionuevo (22:30)</strong></td>
+                        <td data-label="Sábado 16"><strong>Dúo Coplanacu (20:30)</strong><br><strong>Los Manseros Santiagueños (22:30)</strong></td>
+                        <td data-label="Domingo 17"><strong>Peteco Carabajal (19:30)</strong><br>Cierre Santiagueño (21:30)</td>
                     </tr>
                     <tr>
-                        <td><strong>Alternativo</strong></td>
-                        <td>(Actividades Complementarias)</td>
-                        <td>(Actividades Complementarias)</td>
-                        <td>(Actividades Complementarias)</td>
+                        <td data-label="Escenario"><strong>Alternativo</strong></td>
+                        <td data-label="Viernes 15">(Actividades Complementarias)</td>
+                        <td data-label="Sábado 16">(Actividades Complementarias)</td>
+                        <td data-label="Domingo 17">(Actividades Complementarias)</td>
                     </tr>
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="4">Horarios y programación sujetos a cambios. ¡Sigue nuestras redes para últimas novedades!</td>
+                        <td colspan="4">Horarios y programación sujetos a cambios. ¡Seguí nuestras redes para últimas novedades!</td>
                     </tr>
                 </tfoot>
             </table>
