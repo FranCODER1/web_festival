@@ -73,24 +73,19 @@ ul, ol {
     margin-left: 20px;
     margin-bottom: 1rem;
 }
-nav ul, footer ul { /* Quitar viñetas de listas de navegación */
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-}
 
-img { /* Responsividad básica para imágenes */
+img {
     max-width: 100%;
     height: auto;
     display: block;
 }
-audio { /* Estilo base para audio */
+audio {
     width: 100%;
     margin-top: 1em;
-    max-width: 100%; /* Asegurar responsividad del control de audio */
+    max-width: 100%;
 }
 
-a[target="_blank"]::after { /* Iconos Font Awesome al lado de enlaces externos */
+a[target="_blank"]::after {
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     content: "\f35d";
@@ -115,20 +110,21 @@ a[target="_blank"]:hover::after {
     padding-right: 15px;
 }
 
-/* --- HEADER --- */
+/* --- HEADER (CON FLEXBOX) --- */
 header {
     background-color: var(--color-background-main);
     padding-top: 1rem;
 }
-header .container { 
-    overflow: auto;
-    padding-bottom: 1rem; 
+header .container {
+    padding-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
-header img#logo { 
-    float: left;
-    width: 100px; 
+header img#logo {
+    width: 100px;
     height: auto;
-    margin-right: 20px;
+    flex-shrink: 0;
     transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 header img#logo:hover {
@@ -137,12 +133,11 @@ header img#logo:hover {
 header h1 {
     text-align: left;
     color: var(--color-primary-red);
-    padding-top: 20px; 
     margin-bottom: 0;
-    line-height: 1.2; 
+    line-height: 1.2;
 }
 
-/* --- NAVEGACIÓN (STICKY ANIMADO) --- */
+/* --- NAVEGACIÓN (STICKY ANIMADO CON FLEXBOX) --- */
 nav#main-nav {
     background-color: var(--color-secondary-blue);
     padding: 0.5rem 0;
@@ -152,14 +147,16 @@ nav#main-nav {
     width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    border-top: 3px solid var(--color-secondary-blue); /* Línea azul encima del nav */
+    border-top: 3px solid var(--color-secondary-blue);
 }
 nav#main-nav ul {
-    text-align: center;
-}
-nav#main-nav ul li {
-    display: inline-block;
-    margin: 0 0.8rem;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 nav#main-nav ul li a {
     color: var(--color-text-light);
@@ -200,8 +197,8 @@ nav#main-nav ul li a.active::before {
 main {
     padding: 2rem 0;
 }
-section {
-    padding: 1.5rem 15px;
+section { /* Estilos generales para todas las secciones */
+    padding: 1.5rem;
     margin-bottom: 2rem;
     background-color: var(--color-background-section);
     border: 1px solid var(--color-border);
@@ -214,17 +211,21 @@ h2 + p {
     color: #555;
 }
 
-/* --- FOOTER --- */
+/* --- FOOTER (CON FLEXBOX) --- */
 footer {
     background-color: var(--color-secondary-blue);
     color: var(--color-text-light);
-    text-align: center;
-    padding: 2rem 0;
+    padding: 2rem 1rem;
     border-top: 5px solid var(--color-primary-red);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
 }
 footer p {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
     font-size: 0.9rem;
+    text-align: center;
 }
 footer a {
     color: var(--color-accent-light-blue);
@@ -237,26 +238,59 @@ footer a:hover {
 4. ESTILOS DE COMPONENTES ESPECÍFICOS
    ========================================================================== */
 
-/* --- ARTIST CARDS (artistas.html) --- */
+/* --- SECCIÓN DESTACADOS (index.html - MODIFICADO PARA OPCIÓN 1) --- */
+/* section#destacados-wrapper hereda los estilos de 'section' */
+/* Puedes añadir estilos específicos para #destacados-wrapper si es necesario, por ejemplo:
+#destacados-wrapper {
+    background-color: transparent; // Si quieres quitar el fondo de sección solo para esta
+    border: none; // Si quieres quitar el borde solo para esta
+    padding: 0; // Si el padding de sección no es deseado aquí
+}
+*/
+
+#destacados-wrapper h2 { /* Estilos para el título de la sección */
+    /* Hereda de h2 general, puedes añadir/sobreescribir aquí */
+    margin-bottom: 1em; /* Espacio entre el título y la grid de artículos */
+}
+
+#destacados-grid { /* Este es ahora el contenedor de la GRID */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+#destacados-grid article { /* Estilos para los items dentro de la grid */
+    background-color: var(--color-background-main); /* Fondo para las tarjetas */
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+#destacados-grid article h3 {
+    margin-top: 0;
+}
+
+
+/* --- ARTIST CARDS (artistas.html - CON FLEXBOX) --- */
 .artist-card {
     border: 1px solid var(--color-border);
     border-radius: 8px;
     padding: 1.5em;
     margin-bottom: 2em;
-    overflow: auto;
     background-color: var(--color-background-main);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5em;
 }
 .artist-card:hover {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
 .artist-card figure {
-    float: left;
     width: 180px;
-    margin-right: 1.5em;
-    margin-bottom: 1em;
+    flex-shrink: 0;
+    margin-bottom: 0;
 }
 .artist-card figure img {
     border-radius: 8px;
@@ -264,7 +298,25 @@ footer a:hover {
     width: 100%;
 }
 .artist-card .artist-info {
-    overflow: hidden;
+    flex-grow: 1;
+}
+.artist-card .artist-info h3 {
+    margin-top: 0;
+}
+.artist-card .artist-info audio {
+    width: 100%;
+    margin-top: 1em;
+}
+
+/* --- UBICACIÓN LAYOUT (ubicacion.html - CON GRID) --- */
+.ubicacion-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+.ubicacion-layout > section {
+    margin-bottom: 0;
 }
 
 /* --- TABLAS (Cronograma, Entradas) --- */
@@ -281,7 +333,7 @@ table caption {
     font-weight: bold;
     color: var(--color-text-dark);
     padding: 0.5em 0;
-    text-align: left; /* Alinear caption a la izquierda por defecto */
+    text-align: left;
 }
 table th, table td {
     border: 1px solid var(--color-border);
@@ -359,9 +411,16 @@ table tfoot td {
     accent-color: var(--color-primary-red);
 }
 
-/* Botones del Formulario y Genéricos */
+#formulario-contacto form div:last-of-type {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+}
+
 .btn,
-#formulario-contacto input[type="submit"] {
+#formulario-contacto input[type="submit"],
+#formulario-contacto input[type="reset"] {
     background-color: var(--color-primary-red);
     color: var(--color-text-light);
     padding: 0.8em 1.5em;
@@ -373,24 +432,12 @@ table tfoot td {
     text-transform: uppercase;
     font-size: 0.9rem;
     display: inline-block;
-    margin-right: 0.5rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     text-decoration: none;
 }
 #formulario-contacto input[type="reset"] {
     background-color: var(--color-border);
     color: var(--color-text-dark);
-    padding: 0.8em 1.5em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    display: inline-block;
-    margin-right: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 .btn:hover, .btn:focus,
 #formulario-contacto input[type="submit"]:hover,
@@ -412,11 +459,11 @@ table tfoot td {
     position: relative;
     overflow: hidden;
     width: 100%;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    padding-top: 56.25%;
     margin: 1rem auto;
     border: 2px solid var(--color-secondary-blue);
     border-radius: 4px;
-    background-color: #000; /* Fondo negro mientras carga el video/mapa */
+    background-color: #000;
 }
 .video-responsive-wrapper iframe {
     position: absolute;
@@ -454,33 +501,38 @@ table tfoot td {
 5. DISEÑO RESPONSIVO (MEDIA QUERIES)
    ========================================================================== */
 
-/* --- ESCRITORIO (Desde 901px) --- (Estilos base ya orientados a escritorio) */
-/* No se necesitan cambios específicos aquí si los estilos base ya están correctos para escritorio */
-
 /* --- TABLETS (601px a 900px) --- */
 @media (min-width: 601px) and (max-width: 900px) {
     html { font-size: 15px; }
     .container { width: 90%; }
 
     header .container {
-        padding-bottom: 0.75rem;
+        gap: 15px;
     }
     header img#logo {
-        float: left;
         width: 80px;
-        margin-right: 15px;
     }
     header h1 {
-        text-align: left;
         font-size: 2rem;
-        padding-top: 5px; /* Ajustar para tablet */
     }
 
-    nav#main-nav ul li { margin: 0 0.5rem; }
-    nav#main-nav ul li a { font-size: 0.85rem; padding: 0.7em 1em; }
+    nav#main-nav ul {
+        gap: 0.3rem;
+    }
+    nav#main-nav ul li a {
+        font-size: 0.85rem;
+        padding: 0.7em 1em;
+    }
 
+    .artist-card {
+        gap: 1em;
+    }
     .artist-card figure {
         width: 160px;
+    }
+
+    .ubicacion-layout {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 }
 
@@ -489,37 +541,37 @@ table tfoot td {
     html { font-size: 14px; }
     .container { width: 95%; padding-left: 10px; padding-right: 10px; }
 
-    header {
-        padding-top: 0.5rem;
-    }
     header .container {
-        overflow: visible;
-        padding-bottom: 0.5rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        text-align: center;
     }
     header img#logo {
-        float: none;
-        display: block;
         width: 80px;
-        margin: 0 auto 0.5rem;
+        margin-bottom: 0.5rem;
     }
     header h1 {
         text-align: center;
         font-size: 1.8rem;
-        padding-top: 0;
-        float: none;
     }
 
     nav#main-nav {
         border-top-width: 2px;
     }
+    nav#main-nav ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
     nav#main-nav ul li {
-        display: block;
-        margin: 0;
+        width: 100%;
     }
     nav#main-nav ul li a {
         padding: 0.8em;
         border-bottom: 1px solid var(--color-hover-blue);
         border-radius: 0;
+        text-align: center;
     }
     nav#main-nav ul li:last-child a {
         border-bottom: none;
@@ -528,32 +580,48 @@ table tfoot td {
         display: none;
     }
 
+    /* SECCIÓN DESTACADOS (index.html) en móvil */
+    #destacados-grid { /* Apuntando al contenedor de la grid */
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .artist-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1em;
+    }
     .artist-card figure {
-        float: none;
         width: 150px;
-        margin: 0 auto 1em;
+        margin: 0;
     }
     .artist-card .artist-info {
         text-align: center;
     }
+    .artist-card audio {
+        max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-    /* === ESTILOS DE TABLA RESPONSIVA (MÓVIL) - CORREGIDO === */
+    .ubicacion-layout {
+        grid-template-columns: 1fr;
+    }
+
     table {
         display: block;
         width: 100%;
     }
     table caption {
-        display: block;
         text-align: center;
         margin-bottom: 1em;
         font-size: 1.1em;
-        font-weight: bold;
-        color: var(--color-text-dark);
     }
     table thead {
         display: none;
     }
-    table tbody, table tr, table td, table th { /* Incluir th por si se usa en tbody */
+    table tbody, table tr, table td {
         display: block;
         width: 100%;
     }
@@ -567,9 +635,9 @@ table tfoot td {
         border: none;
         border-bottom: 1px dashed var(--color-border);
         position: relative;
-        padding: 0.6em 0.5em 0.6em 40%; /* Espacio para la etiqueta */
+        padding: 0.6em 0.5em 0.6em 40%;
         text-align: right;
-        min-height: auto; /* Quitar min-height anterior */
+        min-height: 1.5em;
     }
     table td:last-child {
         border-bottom: none;
@@ -578,21 +646,21 @@ table tfoot td {
         content: attr(data-label);
         position: absolute;
         left: 0.5em;
-        top: 0.6em; /* Alinear con padding-top del td */
-        width: 35%; /* Ancho para la etiqueta */
-        padding-right: 0.5em; /* Espacio entre etiqueta y valor */
-        white-space: normal; /* Permitir que etiquetas largas se dividan */
+        top: 50%;
+        transform: translateY(-50%);
+        width: 35%;
+        padding-right: 0.5em;
+        white-space: normal;
         font-weight: bold;
         text-align: left;
         color: var(--color-secondary-blue);
     }
-    /* Ajustes específicos para la celda del botón de compra */
     table td[data-label="Enlace de Compra"] {
         padding: 0.8em 0.5em;
         text-align: center;
     }
     table td[data-label="Enlace de Compra"]::before {
-        display: none; /* Ocultar etiqueta si el botón es obvio */
+        display: none;
     }
     table td[data-label="Enlace de Compra"] .btn {
         display: inline-block;
@@ -600,22 +668,31 @@ table tfoot td {
         padding: 0.6em 1em;
         font-size: 0.85rem;
     }
-    /* Ajustes para la celda de descripción */
     table td[data-label="Descripción"] {
         text-align: left;
-        padding-left: 0.5em; 
-        padding-top: 0.6em; 
+        padding-left: 0.5em;
+        padding-top: 0.6em;
     }
     table td[data-label="Descripción"]::before {
-    
-        width: auto; 
-        position: relative; 
-        display: block; 
-        margin-bottom: 0.2em; 
-        top: auto; left: auto; 
-        padding-right: 0; 
+        position: static;
+        transform: none;
+        display: block;
+        width: auto;
+        margin-bottom: 0.2em;
+        font-weight: bold;
+        text-align: left;
     }
 
+    #formulario-contacto form div:last-of-type {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+    #formulario-contacto input[type="submit"],
+    #formulario-contacto input[type="reset"] {
+        width: 100%;
+        margin-right: 0;
+    }
 
     .back-to-top {
         padding: 8px 12px;

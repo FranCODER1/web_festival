@@ -6,15 +6,15 @@
     <meta name="description" content="Festival de música local Sonidos de la Ciudad. Descubre artistas, cronograma y compra tus entradas.">
     <title>Sonidos de la Ciudad - Inicio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilos.css">
-    <link rel="icon" href="img/logo_ciudad.ico"> 
+    <link rel="icon" href="img/logo_ciudad.ico">
 </head>
 <body>
     <header>
         <div class="container">
             <a href="index.html">
-                <img src="img/logo_ciudad.png" alt="Logo Sonidos de la Ciudad" width="150" id="logo">
+                <img src="img/logo_ciudad.png" alt="Logo Sonidos de la Ciudad" width="100" id="logo"> <!-- Ajusté width a 100px para coincidir con CSS-->
             </a>
             <h1>Sonidos de la Ciudad</h1>
         </div>
@@ -37,27 +37,32 @@
             <p>Descubrí nuevos talentos, vibra con tus artistas favoritos y disfruta de tres días llenos de energía y diversidad musical.</p>
         </section>
 
-        <section id="destacados">
-            <h2>Artistas Principales</h2>
-            <article>
-                <h3>Los Manseros Santiagueños</h3>
-                <p>¡Prepárense para la fiesta! Los Manseros Santiagueños, leyendas vivas, llegan con la chacarera más pura y las zambas que enamoran. Sus voces inconfundibles son el alma de Santiago.</p>
-            </article>
-            <article>
-                <h3>Peteco Carabajal</h3>
-                <p>Desde el corazón de la tradición, Peteco Carabajal hará vibrar el escenario con la magia de su violín, la potencia de su bombo y canciones que son himnos. ¡Energía y virtuosismo puro!</p>
-            </article>
-            <article>
-                <h3>Horacio Banegas</h3>
-                <p>Con la fuerza de la tierra en su voz y la poesía en sus cuerdas, Horacio Banegas te invita a un viaje profundo por el paisaje sonoro santiagueño. ¡Melodías que emocionan!</p>
-            </article>
+        <!-- SECCIÓN MODIFICADA -->
+        <section id="destacados-wrapper">
+            <h2>Artistas Principales</h2> <!-- H2 fuera del contenedor de la grid -->
+            <div id="destacados-grid">   <!-- Contenedor específico para la grid -->
+                <article>
+                    <h3>Los Manseros Santiagueños</h3>
+                    <p>¡Prepárense para la fiesta! Los Manseros Santiagueños, leyendas vivas, llegan con la chacarera más pura y las zambas que enamoran. Sus voces inconfundibles son el alma de Santiago.</p>
+                </article>
+                <article>
+                    <h3>Peteco Carabajal</h3>
+                    <p>Desde el corazón de la tradición, Peteco Carabajal hará vibrar el escenario con la magia de su violín, la potencia de su bombo y canciones que son himnos. ¡Energía y virtuosismo puro!</p>
+                </article>
+                <article>
+                    <h3>Horacio Banegas</h3>
+                    <p>Con la fuerza de la tierra en su voz y la poesía en sus cuerdas, Horacio Banegas te invita a un viaje profundo por el paisaje sonoro santiagueño. ¡Melodías que emocionan!</p>
+                </article>
+                <!-- Puedes añadir más artículos aquí si es necesario -->
+            </div>
         </section>
+        <!-- FIN DE SECCIÓN MODIFICADA -->
 
         <section id="video-promo">
             <h2>Tráiler del Festival</h2>
             <div class="video-responsive-wrapper">
                 <iframe
-                    width="560" 
+                    width="560"
                     height="315"
                     src="https://www.youtube.com/embed/7xblk-rASDY"
                     title="Video Promocional del Festival"
@@ -71,8 +76,8 @@
 
     <footer>
         <p>© 2024 Sonidos de la Ciudad. Todos los derechos reservados.</p>
-        <p>Síguenos en 
-            <a href="https://www.facebook.com/franco.rivero.7967/" target="_blank" rel="noopener noreferrer">Facebook</a> | 
+        <p>Síguenos en
+            <a href="https://www.facebook.com/franco.rivero.7967/" target="_blank" rel="noopener noreferrer">Facebook</a> |
             <a href="https://www.instagram.com/p/DJhlXBevOy0/" target="_blank" rel="noopener noreferrer">Instagram</a>
         </p>
         <p><a href="mailto:info@sonidosdelaciudad.com">info@sonidosdelaciudad.com</a></p>
