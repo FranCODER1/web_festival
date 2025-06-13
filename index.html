@@ -6,81 +6,107 @@
     <meta name="description" content="Festival de música local Sonidos de la Ciudad. Descubre artistas, cronograma y compra tus entradas.">
     <title>Sonidos de la Ciudad - Inicio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="estilos.css">
-    <link rel="icon" href="img/logo_ciudad.ico">
+    <link rel="icon" href="img/logo_ciudad.ico"> 
 </head>
-<body>
-    <header>
-        <div class="container">
-            <a href="index.html">
-                <img src="img/logo_ciudad.png" alt="Logo Sonidos de la Ciudad" width="100" id="logo"> <!-- Ajusté width a 100px para coincidir con CSS-->
+<body class="index-page">
+
+    <nav id="main-nav">
+        <div class="nav-container">
+            <a href="index.html" id="logo-nav-link">
+                <img src="img/logo_ciudad.png" alt="Logo Sonidos de la Ciudad" id="logo-nav">
             </a>
-            <h1>Sonidos de la Ciudad</h1>
-        </div>
-        <nav id="main-nav">
             <ul>
                 <li><a href="index.html" class="active">Inicio</a></li>
                 <li><a href="artistas.html">Artistas</a></li>
                 <li><a href="cronograma.html">Cronograma</a></li>
-                <li><a href="entradas.html">Entradas</a></li>
+                <li><a href="entradas.html" class="nav-button-cta">Entradas</a></li>
                 <li><a href="ubicacion.html">Ubicación</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
-    <main class="container">
-        <section id="bienvenida">
-            <h2>¡Bienvenidos a Sonidos de la Ciudad!</h2>
-            <p>El festival que celebra la música y la cultura local está de vuelta. Prepárate para vivir una experiencia inolvidable del <strong>15 al 17 de Agosto</strong> en el <strong>Club Atletico Union Santiago</strong>.</p>
-            <p>Descubrí nuevos talentos, vibra con tus artistas favoritos y disfruta de tres días llenos de energía y diversidad musical.</p>
-        </section>
-
-        <!-- SECCIÓN MODIFICADA -->
-        <section id="destacados-wrapper">
-            <h2>Artistas Principales</h2> <!-- H2 fuera del contenedor de la grid -->
-            <div id="destacados-grid">   <!-- Contenedor específico para la grid -->
-                <article>
-                    <h3>Los Manseros Santiagueños</h3>
-                    <p>¡Prepárense para la fiesta! Los Manseros Santiagueños, leyendas vivas, llegan con la chacarera más pura y las zambas que enamoran. Sus voces inconfundibles son el alma de Santiago.</p>
-                </article>
-                <article>
-                    <h3>Peteco Carabajal</h3>
-                    <p>Desde el corazón de la tradición, Peteco Carabajal hará vibrar el escenario con la magia de su violín, la potencia de su bombo y canciones que son himnos. ¡Energía y virtuosismo puro!</p>
-                </article>
-                <article>
-                    <h3>Horacio Banegas</h3>
-                    <p>Con la fuerza de la tierra en su voz y la poesía en sus cuerdas, Horacio Banegas te invita a un viaje profundo por el paisaje sonoro santiagueño. ¡Melodías que emocionan!</p>
-                </article>
-                <!-- Puedes añadir más artículos aquí si es necesario -->
+    <main>
+        <section id="hero">
+            <div class="hero-panel"> 
+                <div class="hero-content"> 
+                    <h2>¡Bienvenidos a<br>Sonidos de la Ciudad!</h2> 
+                    <p>People of Sonidos, prepare to step into a hidden world soon to be unveiled.</p> 
+                    <div class="hero-cta-buttons">
+                        <a href="#video-promo" class="btn btn-secondary">Ver Trailer</a> 
+                        <a href="entradas.html" class="btn btn-secondary">Comprar Entradas</a> 
+                    </div>
+                </div>
             </div>
         </section>
-        <!-- FIN DE SECCIÓN MODIFICADA -->
+
+        <section id="destacados">
+            <div class="container">
+                <h2>Artistas Principales</h2>
+                <div class="destacados-grid">
+                    <article>
+                        <img src="img/manseros.jpg" alt="Los Manseros Santiagueños" class="artist-thumbnail">
+                        <h3>Los Manseros Santiagueños</h3>
+                        <p>Leyendas vivas con la chacarera más pura y las zambas que enamoran.</p>
+                    </article>
+                    <article>
+                        <img src="img/peteco.jpg" alt="Peteco Carabajal" class="artist-thumbnail">
+                        <h3>Peteco Carabajal</h3>
+                        <p>Magia en el violín, potencia en el bombo y canciones que son himnos.</p>
+                    </article>
+                    <article>
+                        <img src="img/horacio_banegas+.jpg" alt="Horacio Banegas" class="artist-thumbnail">
+                        <h3>Horacio Banegas</h3>
+                        <p>La fuerza de la tierra en su voz y la poesía en sus cuerdas.</p>
+                    </article>
+                    <article>
+                        <img src="img/Raly.jpg" alt="Raly Barrionuevo" class="artist-thumbnail">
+                        <h3>Raly Barrionuevo</h3>
+                        <p>Folklore con sonidos contemporáneos y letras comprometidas.</p>
+                    </article>
+                    <article>
+                        <img src="img/duo-coplanacu.jpg" alt="Dúo Coplanacu" class="artist-thumbnail">
+                        <h3>Dúo Coplanacu</h3>
+                        <p>Dúo emblemático que ha llevado la música santiagueña por todo el país.</p>
+                    </article>
+                    <article>
+                        <img src="img/arcanos.jpeg" alt="Los Arcanos del Desierto" class="artist-thumbnail">
+                        <h3>Los Arcanos del Desierto</h3>
+                        <p>Innovadora propuesta que fusiona el folclore con sonidos contemporáneos y electrónicos.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
         <section id="video-promo">
-            <h2>Tráiler del Festival</h2>
-            <div class="video-responsive-wrapper">
-                <iframe
-                    width="560"
-                    height="315"
-                    src="https://www.youtube.com/embed/7xblk-rASDY"
-                    title="Video Promocional del Festival"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
+            <div class="container">
+                <h2>Tráiler del Festival</h2>
+                <div class="video-responsive-wrapper">
+                    <iframe
+                        width="560" 
+                        height="315"
+                        src="https://www.youtube.com/embed/7xblk-rASDY"
+                        title="Video Promocional del Festival"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>© 2024 Sonidos de la Ciudad. Todos los derechos reservados.</p>
-        <p>Síguenos en
-            <a href="https://www.facebook.com/franco.rivero.7967/" target="_blank" rel="noopener noreferrer">Facebook</a> |
-            <a href="https://www.instagram.com/p/DJhlXBevOy0/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        </p>
-        <p><a href="mailto:info@sonidosdelaciudad.com">info@sonidosdelaciudad.com</a></p>
+        <div class="container">
+            <p>© 2024 Sonidos de la Ciudad. Todos los derechos reservados.</p>
+            <p>Síguenos en 
+                <a href="https://www.facebook.com/franco.rivero.7967/" target="_blank" rel="noopener noreferrer">Facebook</a> | 
+                <a href="https://www.instagram.com/p/DJhlXBevOy0/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </p>
+            <p><a href="mailto:info@sonidosdelaciudad.com">info@sonidosdelaciudad.com</a></p>
+        </div>
     </footer>
 </body>
 </html>
